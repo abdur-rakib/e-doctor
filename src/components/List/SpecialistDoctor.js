@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, FlatList, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import SubHeader from '../Header/SubHeader';
 import AppText from '../shared/AppText';
 
@@ -12,7 +19,7 @@ const data = [
 
 const SingleCategory = (props) => {
   return (
-    <View style={styles.singleCategory}>
+    <TouchableOpacity style={styles.singleCategory}>
       <View style={styles.details}>
         <AppText style={styles.text} numberOfLines={2}>
           {props.item.category}
@@ -20,14 +27,14 @@ const SingleCategory = (props) => {
         <AppText style={styles.text}>{props.item.numOfDoctors} Doctors</AppText>
       </View>
       <View style={styles.categoryImage}></View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const SpecialistDoctor = () => {
   return (
     <View style={styles.container}>
-      <SubHeader />
+      <SubHeader left="Specialist" right="View all" />
       <FlatList
         numColumns={2}
         data={data}
@@ -41,8 +48,7 @@ export default SpecialistDoctor;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 20,
+    marginHorizontal: 20,
   },
   singleCategory: {
     backgroundColor: '#f2f2f2',

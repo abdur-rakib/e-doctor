@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import AppText from '../shared/AppText';
 
-const SubHeader = () => {
+const SubHeader = (props) => {
   return (
     <View style={styles.container}>
-      <AppText style={styles.categoryName}>Specialist</AppText>
-      <AppText style={styles.expand}>View all</AppText>
+      <AppText style={styles.categoryName}>{props.left}</AppText>
+      <AppText style={styles.expand}>{props.right}</AppText>
     </View>
   );
 };
