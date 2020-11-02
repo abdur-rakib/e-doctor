@@ -2,25 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import SpecialistDoctor from './List/SpecialistDoctor';
 import DoctorList from './List/DoctorList';
-import HomeOnBoarding from './HomeOnBoarding';
+import HomeCarousel from './HomeCarousel';
 
 const Consult = () => {
   return (
     <>
-      {/* <HomeOnBoarding /> */}
+      <HomeCarousel />
       <SpecialistDoctor />
       <DoctorList />
-      {/* <View style={{overflow: 'hidden', paddingBottom: 5}}>
-        <View
-          style={{
-            backgroundColor: '#fff',
-            width: '100%',
-            height: 60,
-
-            elevation: 5,
-          }}
-        />
-      </View> */}
     </>
   );
 };
