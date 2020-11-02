@@ -1,13 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AppText from '../shared/AppText';
 
 const HomeHeader = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerLeft}>
         <View style={styles.logo}></View>
-        <Text style={styles.logoTitle}>e-Doctor</Text>
+        <AppText style={styles.logoTitle}>e-Doctor</AppText>
       </View>
       <View style={styles.headerRight}>
         <Ionicons name="notifications-outline" size={22} />
