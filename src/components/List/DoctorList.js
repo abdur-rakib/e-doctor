@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#4c4c4c',
   },
   categoryList: {
     flexDirection: 'row',

@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   categoryName: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#4c4c4c',
   },
   expand: {
     color: 'gray',
