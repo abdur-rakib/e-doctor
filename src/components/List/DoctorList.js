@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import SubHeader from '../Header/SubHeader';
 import AppText from '../shared/AppText';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -52,7 +59,10 @@ const SingleDoctor = ({item: {name, category, qualification}}) => {
   return (
     <TouchableOpacity style={styles.singleDoctor}>
       <View style={styles.left}>
-        <View style={styles.image}></View>
+        <Image
+          style={styles.image}
+          source={require('../../assets/images/doctor.png')}
+        />
         <View style={styles.details}>
           <AppText style={styles.name}>{name}</AppText>
           <View style={styles.categoryList}>
@@ -65,11 +75,11 @@ const SingleDoctor = ({item: {name, category, qualification}}) => {
               {category.join(' · ')}
             </AppText>
           </View>
-          <AppText style={styles.name}>{qualification}</AppText>
+          <AppText style={styles.qualification}>{qualification}</AppText>
         </View>
       </View>
       <View style={styles.right}>
-        <Ionicons name="heart-outline" color="lightgray" size={25} />
+        <Ionicons name="heart" color="#00b4e2" size={25} />
       </View>
     </TouchableOpacity>
   );
@@ -113,15 +123,20 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   name: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#4c4c4c',
+    fontSize: 15,
+    // fontWeight: 'bold',
+    color: '#333333',
   },
   categoryList: {
     flexDirection: 'row',
     marginVertical: 5,
   },
   categoryText: {
-    fontSize: 15,
+    fontSize: 13,
+    color: '#666666',
+  },
+  qualification: {
+    color: '#000000',
+    fontSize: 13,
   },
 });

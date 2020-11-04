@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Dimensions,
+  Image,
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const images = [
   'https://www.omipharma.vn/files/banner/2020-07/xit-chong-nang-lishan-nhat-ban-spf-50-pa-huong-tinh-dau-thien-nhien.jpg',
@@ -37,9 +44,15 @@ const HomeCarousel = () => {
             //   style={styles.wrap}
             //   source={{uri: e}}
             // />
-            <View style={styles.wrap}>
+            <View style={styles.wrap} key={index}>
               <View style={styles.box}>
-                <View style={styles.imageContainer}></View>
+                <View style={styles.imageContainer}>
+                  <Image
+                    style={styles.image}
+                    resizeMode="contain"
+                    source={require('../assets/images/default.png')}
+                  />
+                </View>
               </View>
             </View>
           ))}
@@ -52,6 +65,7 @@ const HomeCarousel = () => {
             //   ●
             // </Text>
             <Ionicons
+              key={index}
               name={active === index ? 'ellipse' : 'ellipse-outline'}
               size={10}
             />
@@ -71,7 +85,7 @@ const styles = StyleSheet.create({
   },
   wrap: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height * 0.25, // 25% window
+    height: 160,
   },
   wrapDot: {
     flexDirection: 'row',
@@ -92,7 +106,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: '90%',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#CFCFCF',
     height: '100%',
     marginHorizontal: 20,
     borderRadius: 5,
@@ -100,10 +114,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageContainer: {
-    height: 130,
-    width: 130,
+    height: 118,
+    width: 118,
     backgroundColor: 'white',
     borderRadius: 65,
-    marginTop: 20,
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: 78,
+    height: 50,
   },
 });

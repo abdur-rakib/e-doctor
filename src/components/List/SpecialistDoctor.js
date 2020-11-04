@@ -6,6 +6,7 @@ import {
   FlatList,
   Dimensions,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import SubHeader from '../Header/SubHeader';
 import AppText from '../shared/AppText';
@@ -21,12 +22,18 @@ const SingleCategory = (props) => {
   return (
     <TouchableOpacity style={styles.singleCategory}>
       <View style={styles.details}>
-        <AppText style={styles.text} numberOfLines={2}>
-          {props.item.category}
-        </AppText>
-        <AppText style={styles.text}>{props.item.numOfDoctors} Doctors</AppText>
+        <Text style={styles.categoryText}>
+          {props.item.category.split(' ')[0]}
+          {'\n'}
+          {props.item.category.split(' ')[1]}
+        </Text>
+        <Text style={styles.numText}>{props.item.numOfDoctors} Doctors</Text>
       </View>
-      <View style={styles.categoryImage}></View>
+      <Image
+        style={styles.categoryImage}
+        resizeMode="contain"
+        source={require('../../assets/images/default.png')}
+      />
     </TouchableOpacity>
   );
 };
@@ -34,7 +41,9 @@ const SingleCategory = (props) => {
 const SpecialistDoctor = () => {
   return (
     <View style={styles.container}>
-      <SubHeader left="Specialist" right="View all" />
+      <View style={{marginHorizontal: 10}}>
+        <SubHeader left="Specialist" right="View all" />
+      </View>
       <FlatList
         numColumns={2}
         data={data}
@@ -48,35 +57,43 @@ export default SpecialistDoctor;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 20,
+    marginHorizontal: 10,
   },
   singleCategory: {
-    backgroundColor: '#f2f2f2',
-    width: Dimensions.get('window').width / 2 - 25,
-    marginRight: 10,
-    marginBottom: 10,
-    padding: 15,
+    backgroundColor: '#F2F2F2',
+    // width: Dimensions.get('window').width / 2,
+    marginHorizontal: 10,
+    marginBottom: 15,
+    paddingHorizontal: 15,
     flexDirection: 'row',
     borderRadius: 5,
     alignItems: 'center',
-    height: 120,
+    height: 100,
+    paddingVertical: 10,
+    flex: 1,
   },
   details: {
-    width: '50%',
-    flexDirection: 'column',
+    // new stylesheet
+    width: '70%',
+    // backgroundColor: 'gray',
     justifyContent: 'space-between',
-    height: 80,
+    height: '90%',
   },
   categoryImage: {
-    height: 60,
-    width: 70,
-    backgroundColor: '#cfcfcf',
-    borderRadius: 5,
+    height: '50%',
+    width: '35%',
     marginLeft: 5,
   },
-  text: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#4c4c4c',
+  categoryText: {
+    fontSize: 17,
+    // fontWeight: 'bold',
+    color: '#000000',
+    marginBottom: 5,
+  },
+  numText: {
+    // marginTop: 5,
+    fontSize: 15,
+    // fontWeight: 'bold',
+    color: '#000000',
   },
 });

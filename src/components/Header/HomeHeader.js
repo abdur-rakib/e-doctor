@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View, Image} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AppText from '../shared/AppText';
 
@@ -7,11 +7,14 @@ const HomeHeader = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerLeft}>
-        <View style={styles.logo}></View>
+        <Image
+          source={require('../../assets/logo/logo.png')}
+          style={styles.logo}
+        />
         <AppText style={styles.logoTitle}>e-Doctor</AppText>
       </View>
       <View style={styles.headerRight}>
-        <Ionicons name="notifications-outline" size={22} />
+        <Ionicons name="notifications-outline" color="#00B4E2" size={24} />
       </View>
     </View>
   );
@@ -31,14 +34,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    height: 45,
-    width: 45,
+    height: 36,
+    width: 36,
     backgroundColor: 'lightgray',
     borderRadius: 5,
   },
   logoTitle: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 10,
+    color: '#5B068C',
   },
 });

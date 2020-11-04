@@ -14,9 +14,11 @@ function HomeTopNavigator() {
           backgroundColor: 'white',
         }}
         tabBarOptions={{
+          activeTintColor: '#5B068C',
+          inactiveTintColor: '#8A8A8F',
           indicatorContainerStyle: {width: '80%', marginLeft: 20},
           indicatorStyle: {
-            backgroundColor: '#131313',
+            backgroundColor: '#5B068C',
             height: 4,
             borderRadius: 5,
           },
@@ -37,10 +39,10 @@ function HomeTopNavigator() {
         <Tab.Screen
           options={{
             title: 'Consult',
-            tabBarIcon: ({color, size}) => (
+            tabBarIcon: ({color, size, focused}) => (
               <Ionicons
                 name="chatbubble-ellipses-outline"
-                color={color}
+                color={focused ? '#00b4e2' : color}
                 size={20}
               />
             ),
@@ -51,8 +53,12 @@ function HomeTopNavigator() {
         <Tab.Screen
           options={{
             title: 'Health Packs',
-            tabBarIcon: ({color, size}) => (
-              <Ionicons name="medkit-outline" color={color} size={20} />
+            tabBarIcon: ({color, size, focused}) => (
+              <Ionicons
+                name="medkit-outline"
+                color={focused ? '#00b4e2' : color}
+                size={20}
+              />
             ),
           }}
           name="HealthPacks"

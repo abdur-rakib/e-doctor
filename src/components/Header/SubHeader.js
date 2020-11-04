@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   categoryName: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#4c4c4c',
+    fontSize: 18,
+    // fontWeight: 'bold',
+    color: '#5B068C',
   },
   expand: {
-    color: 'gray',
+    color: '#00B4E2',
     fontSize: 17,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
   },
 });

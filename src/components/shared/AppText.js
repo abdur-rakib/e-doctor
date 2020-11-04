@@ -13,6 +13,6 @@ export default AppText;
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'OpenSans-Regular',
+    // fontFamily: 'OpenSans-Regular',
   },
 });
